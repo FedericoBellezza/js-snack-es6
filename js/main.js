@@ -99,18 +99,23 @@ const teams = [
 function randomNumGeneration(min, max) {
 	return Math.floor(Math.random() * (max - min) + min);
 }
+
+// - Assegno per ogni squadra punti e falli subiti (generandoli)
+const newArray = [];
+let newObject;
 for (const i in teams) {
 	teams[i].points = randomNumGeneration(0, 10);
 	teams[i].fouls = randomNumGeneration(0, 10);
-}
-const newArray = [...teams];
 
-for (const i in newArray) {
-	delete newArray[i].points;
+	// - Creo un nuovo oggetto da inserire nel nuovo array
+	newObject = { name: teams[i].name, fouls: teams[i].fouls };
+	newArray.push(newObject);
 }
 
+// - Stampiamo tutto in console
 console.log('Array completo:');
 console.table(teams);
+console.log('Array con solo i nomi e i falli subiti:');
 console.table(newArray);
 
 // - Snack 3 (Bonus)
