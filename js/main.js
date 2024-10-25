@@ -121,3 +121,12 @@ console.table(newArray);
 // - Snack 3 (Bonus)
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+console.log('-------------------------------- SNACK 3 --------------------------------');
+
+array = [1, 5, 8, 7, 2, 9, 3];
+function generateArray(array, a, b) {
+	let newArraySnack3 = array.slice(a, b - a);
+	return newArraySnack3;
+}
+
+console.log(generateArray(array, 1, 7));
